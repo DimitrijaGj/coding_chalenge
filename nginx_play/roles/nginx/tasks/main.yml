@@ -10,11 +10,19 @@
     state: started
     enabled: yes
 
-- name: 
-
 - name: Start Page
   template:
     src: index.html.j2
     dest: /var/www/htmml/index.html
+- name: Set the vhost
+  template:
+    src: vhost.conf.js
+    dest: /etc/nginx/sites-enabled/welcome
+    mode: 644
+  notify: Restart nginx
 
-  
+- name: Remove default site if present
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: Restart nginx
