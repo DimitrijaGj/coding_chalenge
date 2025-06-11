@@ -26,7 +26,7 @@ jobs:
       - name: Run a in Doceker
         run: |
           docker run --rm \
-            -v "${{ github.workspace }}:/nginx_play" \
-            -w /nginx_play \
+            -v "${{ github.workspace }}:/coding_chalenge/nginx_play" \
+            -w ./coding_chalenge/nginx_play \
             cytopia/ansible-lint \
             ansible-lint playbook.yml
