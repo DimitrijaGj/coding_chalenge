@@ -13,10 +13,10 @@
 - name: Start Page
   template:
     src: index.html.j2
-    dest: /var/www/htmml/index.html
+    dest: /var/www/html/index.html
 - name: Set the vhost
   template:
-    src: vhost.conf.js
+    src: vhost.conf.j2
     dest: /etc/nginx/sites-enabled/welcome
     mode: 644
   notify: Restart nginx
