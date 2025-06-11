@@ -28,5 +28,5 @@ jobs:
           docker run --rm \
             -v "${{ github.workspace }}:/data" \
             -w /data \
-            ghcr.io/ansible/ansible-lint \
+            cytopia/ansible-lint \
             ansible-lint playbook.yml
