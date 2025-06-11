@@ -26,7 +26,7 @@ jobs:
       - name: Run a in Docker
         run: |
           docker run --rm \
-            -v "${{ github.workspace }}:/nginx_play" \
-            -w /nginx_play \
+            -v "${{ github.workspace }}/nginx_play:/ansible_project" \
+            -w /ansible_project \
             cytopia/ansible-lint \
-            bash -c "git config --global --add safe.directory /ansible_project && ansible-lint playbook.yml"
+            ansible-lint playbook.yml
