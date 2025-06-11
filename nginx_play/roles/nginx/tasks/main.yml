@@ -4,4 +4,17 @@
     name: nginx
     state: present
 
+- name: Make sure NGINX is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: 
+
+- name: Start Page
+  template:
+    src: index.html.j2
+    dest: /var/www/htmml/index.html
+
   
