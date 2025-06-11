@@ -1,5 +1,5 @@
 ---
-name: Ansible lint renamed
+name: Ansible lint 
 
 on:
   push:
