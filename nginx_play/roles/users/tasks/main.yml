@@ -1,0 +1,23 @@
+- name: Ensure  user exists
+  ansible.builtin.user:
+    name: "{{ coder_user }}"
+    comment: "{{ coder_comment }}"
+    shell: "{{ coder_shell }}"
+    create_home: yes
+    uid: "{{ coder_uid }}"
+    groups: "{{ coder_groups }}"
+    state: present
+
+- name: Install coder's SSH public key
+  ansible.builtin.authorized_key:
+    user: "{{ coder_user }}"
+    key: "{{ coder_ssh_pubkey }}"
+
+- name: Grant passwordless sudo to coder
+  ansible.builtin.copy:
+    dest: "/etc/sudoers.d/{{ coder_user }}"
+    content: "{{ coder_user }} ALL=(ALL) NOPASSWD: {{ sudo_commands }}"
+    owner: root
+    group: root
+    mode: '0440'
+  validate: 'visudo -cf %s'
