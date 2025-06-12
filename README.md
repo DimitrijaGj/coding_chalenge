@@ -9,4 +9,17 @@ Danach, ist mit
 ```
 cat code_chalenge.pub
 ```
-Der Inhalt ausgegeben kopier und in GitHub Security Deployed Keys hinzugefügt.
+
+## Teil 2: Ansible-Rolle ##
+
+Nginx_play ist einfache Role für NGINX instalieren. 
+Für .html file und NGINX config sind Vorlage genutzt.
+
+## Teil 3: CI/CD Action ##
+
+Workflow uses Docker Container für Ansible-lint um automatisch Code zu checken bei push.
+
+## Teil 4: Dokumentation ##
+
+Diese README ist kurz zusammengefasst was in Repo stehet.
+
