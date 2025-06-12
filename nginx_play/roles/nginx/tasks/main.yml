@@ -12,12 +12,12 @@
 
 - name: Start Page
   template:
-    src: index.html.j2
-    dest: /var/www/html/index.html
+    src: welcome.html.j2
+    dest: /var/www/html/welcome.html
 - name: Set the vhost
   template:
     src: vhost.conf.j2
-    dest: /etc/nginx/sites-enabled/welcome
+    dest: /etc/nginx/sites-enabled/welcome.conf
     mode: "0644"
   notify: Restart nginx
 
