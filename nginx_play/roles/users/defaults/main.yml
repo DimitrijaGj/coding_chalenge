@@ -1,7 +1,0 @@
-coder_user: coder                 
-coder_comment: "Ansible managed user coder"
-coder_shell: /bin/bash            
-coder_uid: null                 
-coder_groups: []
-coder_ssh_pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJE9o6J6ELLs+QzE+EoScLYW+pdyZgQNMJFO0WMha5Pq dimitrijagjoshev@Dimitrijas-MacBook-Pro-2.local"
-sudo_commands: "ALL"
